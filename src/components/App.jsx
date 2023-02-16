@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
-import Section from './Section';
 import ContactForm from './ContactForm';
 import ContactList from './ContactList';
 import Filter from './Filter';
+import { Container, Title, SubTitle } from './App.styled';
 
 export class App extends Component {
   state = {
@@ -52,26 +52,14 @@ export class App extends Component {
 
   render() {
     return (
-      <div
-        style={{
-          height: '100vh',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'start',
-          alignItems: 'flex-start',
-          fontSize: 40,
-          color: '#010101',
-          padding: '25px',
-        }}
-      >
-        <Section title="Phonebook">
+      <Container>
+        <Title>Phonebook</Title>
           <ContactForm onSubmit={this.handleFormSubmit} />
-        </Section>
-        <Section title="Contacts">
+
+        <SubTitle>Contacts</SubTitle>
           <Filter callback={this.handleFilter} />
           <ContactList data={this.state.contacts} filter={this.state.filter} removeCallback={this.removeContact} />
-        </Section>
-      </div>
+      </Container>
     );
   }
 }

@@ -2,10 +2,10 @@ import styled from '@emotion/styled'
 
 export const Button = styled.button`
     padding:5px;
-    display: inline-flex;
+    display: flex;
     align-items:center;
     gap: 5px;
-
+    height:38px;
     svg {
         zoom:1.3;
     }
